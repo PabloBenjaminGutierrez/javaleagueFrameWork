@@ -1,9 +1,9 @@
 package org.javahispano.javacup.model.trajectory;
 
 /**
- * Clase que al extenderla permite definir trayectorias por tramos.
- * Luego de manera recursiva se obtiene el valor de la trayectoria en
- * cualquier instante de tiempo futuro.
+ * Clase que al extenderla permite definir trayectorias por tramos. Luego de
+ * manera recursiva se obtiene el valor de la trayectoria en cualquier instante
+ * de tiempo futuro.
  */
 public abstract class AbstractTrajectory {
 
@@ -19,7 +19,10 @@ public abstract class AbstractTrajectory {
         this.dt = getDt();
     }
 
-    /**Retorna el objeto trayectoria correpondiente a un instante de tiempo especifico*/
+    /**
+     * Retorna el objeto trayectoria correpondiente a un instante de tiempo
+     * especifico
+     */
     public AbstractTrajectory getTrajectory(double time) {
         if (this instanceof AirTrajectory) {
             if (time < dt) {
@@ -33,16 +36,24 @@ public abstract class AbstractTrajectory {
         }
     }
 
-    /**Distancia horizontal recorrida por la trayectoria en el instante t*/
+    /**
+     * Distancia horizontal recorrida por la trayectoria en el instante t
+     */
     public abstract double getX(double t);
 
-    /**Distancia vertical recorrida por la trayectoria en el instante t*/
+    /**
+     * Distancia vertical recorrida por la trayectoria en el instante t
+     */
     public abstract double getY(double t);
 
-    /**Instante de tiempo hasta donde es valida la trayectoria*/
+    /**
+     * Instante de tiempo hasta donde es valida la trayectoria
+     */
     public abstract double getDt();
 
-    /**Indica si entre el instante t0 y t1 ocurrio un rebote*/
+    /**
+     * Indica si entre el instante t0 y t1 ocurrio un rebote
+     */
     public boolean isRebound(double t0, double t1) {
         AbstractTrajectory tr0 = getTrajectory(t0);
         AbstractTrajectory tr1 = getTrajectory(t1);

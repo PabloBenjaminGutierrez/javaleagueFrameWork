@@ -6,7 +6,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import org.javahispano.javacup.model.util.Constants;
 
-/**Almacena los datos que se persitiran al cerrar la aplicacion Principal, uso interno*/
+/**
+ * Almacena los datos que se persitiran al cerrar la aplicacion Principal, uso
+ * interno
+ */
 public class PrincipalDatos {
 
     public static final long serialVersionUID = 1l;

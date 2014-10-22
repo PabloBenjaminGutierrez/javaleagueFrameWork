@@ -1,125 +1,128 @@
 package org.javahispano.javacup.applet;
+
 /**
-*
-* @author Viruz
-*/
+ *
+ * @author Viruz
+ */
 public class CronometroThread implements Runnable {
-   private Thread hiloCronometro;
-   private boolean go,live;
-   private int segundos;
-   private int hr;
-   private int min;
-   private int seg;
 
-   public CronometroThread(int seg) {
-       segundos = seg;
-   }
+    private Thread hiloCronometro;
+    private boolean go, live;
+    private int segundos;
+    private int hr;
+    private int min;
+    private int seg;
 
-   public void run() {
-       try {
-           while (isLive()) {
-               synchronized(this) {
-                   while (!isGo())
-                       wait();
-               }
-               Thread.sleep(1000);
-               segundos--;
-               actualizarThread();
-           }
-       } catch (InterruptedException e) {}
-   }
+    public CronometroThread(int seg) {
+        segundos = seg;
+    }
 
-   public void createThread() {
-       hiloCronometro = new Thread(this);
-       hiloCronometro.start();
-   }
+    public void run() {
+        try {
+            while (isLive()) {
+                synchronized (this) {
+                    while (!isGo()) {
+                        wait();
+                    }
+                }
+                Thread.sleep(1000);
+                segundos--;
+                actualizarThread();
+            }
+        } catch (InterruptedException e) {
+        }
+    }
 
-   private void actualizarThread() {
-       if (isLive() == true) {
-           hr= segundos/3600;
-           min =(segundos-hr*3600)/60;
-           seg = segundos-hr*3600-min*60;
-       } else {
-           segundos = 0;
-       }
-   }
+    public void createThread() {
+        hiloCronometro = new Thread(this);
+        hiloCronometro.start();
+    }
 
-   public void suspenderThread() {
-       setGo(false);
-   }
+    private void actualizarThread() {
+        if (isLive() == true) {
+            hr = segundos / 3600;
+            min = (segundos - hr * 3600) / 60;
+            seg = segundos - hr * 3600 - min * 60;
+        } else {
+            segundos = 0;
+        }
+    }
 
-   public synchronized void continuarThread() {
-       setGo(true);
-       notify();
-   }
+    public void suspenderThread() {
+        setGo(false);
+    }
 
-   //********** MÉTODOS SET Y GET DE LAS VARIABLES DE TIPO BOOLEAN e INT ************
-   /**
-    * @return the live
-    */
-   public boolean isLive() {
-       return live;
-   }
+    public synchronized void continuarThread() {
+        setGo(true);
+        notify();
+    }
 
-   /**
-    * @param live the live to set
-    */
-   public void setLive(boolean live) {
-       this.live = live;
-   }
+    //********** MÉTODOS SET Y GET DE LAS VARIABLES DE TIPO BOOLEAN e INT ************
+    /**
+     * @return the live
+     */
+    public boolean isLive() {
+        return live;
+    }
 
-   /**
-    * @return the go
-    */
-   public boolean isGo() {
-       return go;
-   }
+    /**
+     * @param live the live to set
+     */
+    public void setLive(boolean live) {
+        this.live = live;
+    }
 
-   /**
-    * @param go the go to set
-    */
-   public void setGo(boolean go) {
-       this.go = go;
-   }
+    /**
+     * @return the go
+     */
+    public boolean isGo() {
+        return go;
+    }
 
-   /**
-    * @return the segundos
-    */
-   public int getSegundos() {
-       return segundos;
-   }
+    /**
+     * @param go the go to set
+     */
+    public void setGo(boolean go) {
+        this.go = go;
+    }
 
-   /**
-    * @param segundos the segundos to set
-    */
-   public void setSegundos(int segundos) {
-       this.segundos = segundos;
-       System.out.println("Valor de SEgundos:" + this.segundos);
-   }
+    /**
+     * @return the segundos
+     */
+    public int getSegundos() {
+        return segundos;
+    }
 
-public int getHr() {
-	return hr;
-}
+    /**
+     * @param segundos the segundos to set
+     */
+    public void setSegundos(int segundos) {
+        this.segundos = segundos;
+        System.out.println("Valor de SEgundos:" + this.segundos);
+    }
 
-public void setHr(int hr) {
-	this.hr = hr;
-}
+    public int getHr() {
+        return hr;
+    }
 
-public int getMin() {
-	return min;
-}
+    public void setHr(int hr) {
+        this.hr = hr;
+    }
 
-public void setMin(int min) {
-	this.min = min;
-}
+    public int getMin() {
+        return min;
+    }
 
-public int getSeg() {
-	return seg;
-}
+    public void setMin(int min) {
+        this.min = min;
+    }
 
-public void setSeg(int seg) {
-	this.seg = seg;
-}
-   
-   
+    public int getSeg() {
+        return seg;
+    }
+
+    public void setSeg(int seg) {
+        this.seg = seg;
+    }
+
 }

@@ -7,9 +7,12 @@ import org.javahispano.javacup.model.TacticDetail;
 import org.javahispano.javacup.model.util.Color;
 import org.javahispano.javacup.render.EstiloUniforme;
 
-/**Implementación de TacticDetail, usada internamente*/
- final class TacticaDetalleImpl implements TacticDetail, Serializable {
-	private static final long serialVersionUID = 1L;
+/**
+ * Implementación de TacticDetail, usada internamente
+ */
+final class TacticaDetalleImpl implements TacticDetail, Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final String nombre;
     private final String pais;
@@ -28,7 +31,9 @@ import org.javahispano.javacup.render.EstiloUniforme;
     private final EstiloUniforme estilo2;
     private final JugadorImpl[] jugadores = new JugadorImpl[11];
 
-	/**Copia el detalle y deja inmutables sus valores*/
+    /**
+     * Copia el detalle y deja inmutables sus valores
+     */
     TacticaDetalleImpl(TacticDetail impl) {
         this.nombre = impl.getTacticName();
         this.pais = impl.getCountry();
@@ -50,52 +55,52 @@ import org.javahispano.javacup.render.EstiloUniforme;
         }
     }
 
-	@Override
+    @Override
     public String getTacticName() {
         return nombre;
     }
 
-	@Override
+    @Override
     public String getCountry() {
         return pais;
     }
 
-	@Override
+    @Override
     public String getCoach() {
         return entrenador;
     }
 
-	@Override
+    @Override
     public Color getShirtColor() {
         return colorCamiseta;
     }
 
-	@Override
+    @Override
     public Color getShortsColor() {
         return colorPantalon;
     }
 
-	@Override
+    @Override
     public Color getShirtLineColor() {
         return colorFranja;
     }
 
-	@Override
+    @Override
     public Color getSocksColor() {
         return colorCalcetas;
     }
 
-	@Override
+    @Override
     public EstiloUniforme getStyle() {
         return estilo;
     }
 
-	@Override
+    @Override
     public PlayerDetail[] getPlayers() {
         return jugadores;
     }
 
-	@Override
+    @Override
     public Color getGoalKeeper() {
         return colorPortero;
     }
@@ -130,4 +135,3 @@ import org.javahispano.javacup.render.EstiloUniforme;
         return estilo2;
     }
 }
-

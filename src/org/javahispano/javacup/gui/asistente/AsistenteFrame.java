@@ -48,8 +48,10 @@ import org.slf4j.LoggerFactory;
 
 import com.thoughtworks.xstream.XStream;
 
-/**Aplicacion que permite generar codigo para la implementacion de la clase TacticDetail.
- * Ademas permite gestionar alineaciones y simular remates*/
+/**
+ * Aplicacion que permite generar codigo para la implementacion de la clase
+ * TacticDetail. Ademas permite gestionar alineaciones y simular remates
+ */
 public class AsistenteFrame extends javax.swing.JFrame implements Runnable {
 
     private boolean pintando = false;
@@ -1865,9 +1867,9 @@ private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             codigo = "package " + paquete + ";\n\n";
         }
         codigo = codigo + "import org.javahispano.javacup.model.*;\n"
-                +"import org.javahispano.javacup.model.util.Position;\n"
-                +"import org.javahispano.javacup.model.engine.GameSituations;\n"
-                +"import org.javahispano.javacup.model.command.*;\n"
+                + "import org.javahispano.javacup.model.util.Position;\n"
+                + "import org.javahispano.javacup.model.engine.GameSituations;\n"
+                + "import org.javahispano.javacup.model.command.*;\n"
                 + "import java.util.List;\n\n"
                 + "public class " + clase + " implements Tactic {\n\n" + codalin
                 + "    public Position[] getStartPositions(GameSituations sp) {\n"
@@ -1892,8 +1894,8 @@ private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 }//GEN-LAST:event_jMenuItem4ActionPerformed
 
 private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-    String codigo =
-            "public class TacticDetailImpl implements TacticDetail {\n\n"
+    String codigo
+            = "public class TacticDetailImpl implements TacticDetail {\n\n"
             + "        public String getTacticName() {\n"
             + "            return \"" + impl.getTacticName() + "\";\n"
             + "        }\n\n"
@@ -2014,8 +2016,6 @@ private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             + "        public EstiloUniforme getStyle2() {\n"
             + "            return EstiloUniforme." + estilo + ";\n"
             + "        }\n\n";
-
-
 
     codigo = codigo + "        class JugadorImpl implements PlayerDetail {\n\n"
             + "            String nombre;\n"
@@ -2376,7 +2376,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             update = true;
         }
     } else {
-        java.awt.Color col = JColorChooser.showDialog(this, "Color de la Franja", new java.awt.Color(impl.getShirtLineColor2().getRed(), impl.getShirtLineColor2().getGreen(), impl.getShirtLineColor2().getBlue()));    	
+        java.awt.Color col = JColorChooser.showDialog(this, "Color de la Franja", new java.awt.Color(impl.getShirtLineColor2().getRed(), impl.getShirtLineColor2().getGreen(), impl.getShirtLineColor2().getBlue()));
         if (col != null) {
             impl.setColorFranja2(new Color(col.getRed(), col.getGreen(), col.getBlue()));
             jButton4.setBackground(col);
@@ -2396,7 +2396,7 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             update = true;
         }
     } else {
-        java.awt.Color col = JColorChooser.showDialog(this, "Color de las Calcetas", new java.awt.Color(impl.getSocksColor2().getRed(), impl.getSocksColor2().getGreen(), impl.getSocksColor2().getBlue()));    	
+        java.awt.Color col = JColorChooser.showDialog(this, "Color de las Calcetas", new java.awt.Color(impl.getSocksColor2().getRed(), impl.getSocksColor2().getGreen(), impl.getSocksColor2().getBlue()));
         if (col != null) {
             impl.setColorCalcetas2(new Color(col.getRed(), col.getGreen(), col.getBlue()));
             jButton3.setBackground(col);
@@ -2416,7 +2416,7 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             update = true;
         }
     } else {
-        java.awt.Color col = JColorChooser.showDialog(this, "Color de los Pantalones", new java.awt.Color(impl.getShortsColor2().getRed(), impl.getShortsColor2().getGreen(), impl.getShortsColor2().getBlue()));    	
+        java.awt.Color col = JColorChooser.showDialog(this, "Color de los Pantalones", new java.awt.Color(impl.getShortsColor2().getRed(), impl.getShortsColor2().getGreen(), impl.getShortsColor2().getBlue()));
         if (col != null) {
             impl.setColorPantalon2(new Color(col.getRed(), col.getGreen(), col.getBlue()));
             jButton2.setBackground(col);
@@ -2436,7 +2436,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             update = true;
         }
     } else {
-        java.awt.Color col = JColorChooser.showDialog(this, "Color de la Camiseta", new java.awt.Color(impl.getShirtColor2().getRed(), impl.getShirtColor2().getGreen(), impl.getShirtColor2().getBlue()));    	
+        java.awt.Color col = JColorChooser.showDialog(this, "Color de la Camiseta", new java.awt.Color(impl.getShirtColor2().getRed(), impl.getShirtColor2().getGreen(), impl.getShirtColor2().getBlue()));
         if (col != null) {
             impl.setColorCamiseta2(new Color(col.getRed(), col.getGreen(), col.getBlue()));
             jButton1.setBackground(col);

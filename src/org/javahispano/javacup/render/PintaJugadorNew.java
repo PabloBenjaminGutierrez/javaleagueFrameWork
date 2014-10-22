@@ -10,7 +10,9 @@ import org.newdawn.slick.ImageBuffer;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.TrueTypeFont;
 
-/** Esta clase dibuja los jugadores, uso interno*/
+/**
+ * Esta clase dibuja los jugadores, uso interno
+ */
 public final class PintaJugadorNew extends PintaJugador {
 
     private Image img[][] = new Image[56][6];
@@ -37,7 +39,9 @@ public final class PintaJugadorNew extends PintaJugador {
     private Color zapatos = new Color(45, 46, 53);
     private Color uzapatos = new Color(0, 0, 0);
 
-    /**Cambia los colores de una imagen*/
+    /**
+     * Cambia los colores de una imagen
+     */
     public Image changeColor(Image img, float[] hueRatios, Color[] colors, boolean flip) throws SlickException {
         int width = img.getWidth();
         int height = img.getHeight();
@@ -90,7 +94,8 @@ public final class PintaJugadorNew extends PintaJugador {
         return buf.getImage();
     }
 
-    /**Actualiza los cambios sobre la implementacion en los graficos
+    /**
+     * Actualiza los cambios sobre la implementacion en los graficos
      */
     public synchronized void update(boolean alternativa) throws SlickException {
         Image all = null;
@@ -119,7 +124,6 @@ public final class PintaJugadorNew extends PintaJugador {
         Color uportero = alternativa ? new Color(impl.getGoalKeeper2().getRed(), impl.getGoalKeeper2().getGreen(), impl.getGoalKeeper2().getBlue()) : new Color(impl.getGoalKeeper().getRed(), impl.getGoalKeeper().getGreen(), impl.getGoalKeeper().getBlue());
         Color ufranja = alternativa ? new Color(impl.getShirtLineColor2().getRed(), impl.getShirtLineColor2().getGreen(), impl.getShirtLineColor2().getBlue()) : new Color(impl.getShirtLineColor().getRed(), impl.getShirtLineColor().getGreen(), impl.getShirtLineColor().getBlue());
 
-
         for (int i = 0; i < 11; i++) {
             Color upelo = new Color(impl.getPlayers()[i].getHairColor().getRed(), impl.getPlayers()[i].getHairColor().getGreen(), impl.getPlayers()[i].getHairColor().getBlue());
             Color upiel = new Color(impl.getPlayers()[i].getSkinColor().getRed(), impl.getPlayers()[i].getSkinColor().getGreen(), impl.getPlayers()[i].getSkinColor().getBlue());
@@ -134,36 +138,36 @@ public final class PintaJugadorNew extends PintaJugador {
                 float rd = 0.07f;
                 if (impl.getPlayers()[i].isGoalKeeper()) {
                     imgJug[i][j] = changeColor(original, new float[]{rd, rd, rd, rd, rd, rd, rd}, new org.newdawn.slick.Color[]{
-                                piel,
-                                upiel,
-                                pelo,
-                                upelo,
-                                franja,
-                                uportero,
-                                polera,
-                                uportero,
-                                pantalon,
-                                uportero,
-                                zapatos,
-                                uzapatos,
-                                calcetas,
-                                ucalcetas,}, flip);
+                        piel,
+                        upiel,
+                        pelo,
+                        upelo,
+                        franja,
+                        uportero,
+                        polera,
+                        uportero,
+                        pantalon,
+                        uportero,
+                        zapatos,
+                        uzapatos,
+                        calcetas,
+                        ucalcetas,}, flip);
                 } else {
                     imgJug[i][j] = changeColor(original, new float[]{rd, rd, rd, rd, rd, rd, rd}, new org.newdawn.slick.Color[]{
-                                piel,
-                                upiel,
-                                pelo,
-                                upelo,
-                                franja,
-                                ufranja,
-                                pantalon,
-                                upantalon,
-                                polera,
-                                upolera,
-                                zapatos,
-                                uzapatos,
-                                calcetas,
-                                ucalcetas}, flip);
+                        piel,
+                        upiel,
+                        pelo,
+                        upelo,
+                        franja,
+                        ufranja,
+                        pantalon,
+                        upantalon,
+                        polera,
+                        upolera,
+                        zapatos,
+                        uzapatos,
+                        calcetas,
+                        ucalcetas}, flip);
                 }
             }
         }

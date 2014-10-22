@@ -5,19 +5,23 @@ import java.util.HashSet;
 import org.javahispano.javacup.model.TacticDetail;
 import org.javahispano.javacup.render.EstiloUniforme;
 
-/**Clase usada para validar una tactica*/
+/**
+ * Clase usada para validar una tactica
+ */
 public final class TacticValidate {
 
-    /**Clase para Validar implementaciones tactica*/
+    /**
+     * Clase para Validar implementaciones tactica
+     */
     public static void validateDetail(String name, TacticDetail t) throws Exception {
         if (t == null) {
             throw new Exception(name + "TacticDetail null");
         }
-        if (t.getSocksColor() == null ||
-                t.getShirtColor() == null ||
-                t.getShirtLineColor() == null ||
-                t.getShortsColor() == null ||
-                t.getGoalKeeper() == null) {
+        if (t.getSocksColor() == null
+                || t.getShirtColor() == null
+                || t.getShirtLineColor() == null
+                || t.getShortsColor() == null
+                || t.getGoalKeeper() == null) {
             throw new Exception(name + "TacticDetail: ColorCalcetas , ColorCamiseta , ColorFranja , ColorPantalon o ColorPortero es nulo");
         }
         if (t.getStyle() == null) {
@@ -26,9 +30,9 @@ public final class TacticValidate {
         if (t.getCoach() == null || t.getTacticName() == null || t.getCountry() == null) {
             throw new Exception(name + "TacticDetail: Entrenador, Nombre o Pais nulo");
         }
-        if (t.getCoach().trim().length() == 0 ||
-                t.getTacticName().trim().length() == 0 ||
-                t.getCountry().trim().length() == 0) {
+        if (t.getCoach().trim().length() == 0
+                || t.getTacticName().trim().length() == 0
+                || t.getCountry().trim().length() == 0) {
             throw new Exception(name + "TacticDetail: Entrenador, Nombre o Pais vacio");
         }
         if (t.getPlayers() == null) {
@@ -87,18 +91,20 @@ public final class TacticValidate {
         }
     }
 
-    /**Valida una alineacion para el saque y para la recepcion*/
+    /**
+     * Valida una alineacion para el saque y para la recepcion
+     */
     public static Position[][] validatePositions(String name, Position[] starts, Position[] noStarts) throws Exception {
-        Position[] recibe0=new Position[11],saca0=new Position[11];
-        for(int i=0;i<11;i++){
+        Position[] recibe0 = new Position[11], saca0 = new Position[11];
+        for (int i = 0; i < 11; i++) {
             if (noStarts[i] == null) {
                 throw new Exception("Alineacion Recibe[" + i + "] nulo");
             }
             if (starts[i] == null) {
                 throw new Exception("Alineacion Saca[" + i + "] nulo");
             }
-            recibe0[i]=new Position(noStarts[i]);
-            saca0[i]=new Position(starts[i]);
+            recibe0[i] = new Position(noStarts[i]);
+            saca0[i] = new Position(starts[i]);
         }
         if (noStarts == null) {
             throw new Exception("Alineacion Recibe nulo");
@@ -129,7 +135,7 @@ public final class TacticValidate {
     }
 
     private static double distancia(Color c1, Color c2) {
-        return Math.sqrt((c1.getRed() - c2.getRed())*(c1.getRed() - c2.getRed()) + (c1.getGreen() - c2.getGreen())*(c1.getGreen() - c2.getGreen()) + (c1.getBlue() - c2.getBlue())*(c1.getBlue() - c2.getBlue()));
+        return Math.sqrt((c1.getRed() - c2.getRed()) * (c1.getRed() - c2.getRed()) + (c1.getGreen() - c2.getGreen()) * (c1.getGreen() - c2.getGreen()) + (c1.getBlue() - c2.getBlue()) * (c1.getBlue() - c2.getBlue()));
     }
 
     private static Color mesclarColor(Color c1, Color c2, double p1) {
@@ -156,18 +162,23 @@ public final class TacticValidate {
     }
     private static double umbral = 150;
 
-    /**Indica true si es necesario que el equipo visita cambie a su uniforme alternativo*/
+    /**
+     * Indica true si es necesario que el equipo visita cambie a su uniforme
+     * alternativo
+     */
     public static boolean useAlternativeColors(TacticDetail local, TacticDetail visita) {
         Color cl1, cv1, cv2;
         cl1 = mesclarColor(local.getShirtColor(), local.getShirtLineColor(), getP1(local.getStyle()));
         cv1 = mesclarColor(visita.getShirtColor(), visita.getShirtLineColor(), getP1(visita.getStyle()));
         cv2 = mesclarColor(visita.getShirtColor2(), visita.getShirtLineColor2(), getP1(visita.getStyle2()));
-        double d1=distancia(cl1, cv1);
-        double d2=distancia(cl1, cv2);
+        double d1 = distancia(cl1, cv1);
+        double d2 = distancia(cl1, cv2);
         return d1 < umbral && d2 > d1;
     }
 
-    /**Indica true si los dos unifermes de una tactica son muy parecidos*/
+    /**
+     * Indica true si los dos unifermes de una tactica son muy parecidos
+     */
     public static boolean equalsColors(TacticDetail local) {
         Color cl1, cl2;
         cl1 = mesclarColor(local.getShirtColor(), local.getShirtLineColor(), getP1(local.getStyle()));

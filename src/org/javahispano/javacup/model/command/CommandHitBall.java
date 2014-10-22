@@ -3,83 +3,138 @@ package org.javahispano.javacup.model.command;
 import org.javahispano.javacup.model.util.Constants;
 import org.javahispano.javacup.model.util.Position;
 
-/**Command que especifica de que forma se rematara el balon*/
+/**
+ * Command que especifica de que forma se rematara el balon
+ */
 public final class CommandHitBall extends Command {
 
-    /**Establece la fuerza del remate*/
-    /**Set the kick power*/
+    /**
+     * Establece la fuerza del remate
+     */
+    /**
+     * Set the kick power
+     */
     public void setHitPower(double power) {
         this.fuerzaRemate = power;
     }
 
-    /**retorna true si se especifico como destino un angle, en vez de una coordenada*/
-    /**Is true when destiny is an angle*/
+    /**
+     * retorna true si se especifico como destino un angle, en vez de una
+     * coordenada
+     */
+    /**
+     * Is true when destiny is an angle
+     */
     public boolean isAngle() {
         return angulo;
     }
 
-    /**retorna true si se especifico como destino una coordenada, en vez de un angle*/
-    /**Is true when destiny is a coordinate*/
+    /**
+     * retorna true si se especifico como destino una coordenada, en vez de un
+     * angle
+     */
+    /**
+     * Is true when destiny is a coordinate
+     */
     public boolean isCoordinate() {
         return destino;
     }
 
-    /**Player index which executes the command*/
-    /**Indice del jugador que ejecutara el comando*/
+    /**
+     * Player index which executes the command
+     */
+    /**
+     * Indice del jugador que ejecutara el comando
+     */
     @Override
     public int getPlayerIndex() {
         return indJugador;
     }
 
-    /**Command type*/
-    /**Tipo del comando*/
+    /**
+     * Command type
+     */
+    /**
+     * Tipo del comando
+     */
     @Override
     public CommandType getCommandType() {
         return CommandType.HIT_BALL;
     }
 
-    /**Retorna el angle de direccion del remate*/
-    /**Returns the angle of kick*/
+    /**
+     * Retorna el angle de direccion del remate
+     */
+    /**
+     * Returns the angle of kick
+     */
     public double getAngle() {
         return anguloRemate;
     }
 
-    /**Retorna la fuerza del remate (de 0 a 1)*/
-    /**Returns the kick power*/
+    /**
+     * Retorna la fuerza del remate (de 0 a 1)
+     */
+    /**
+     * Returns the kick power
+     */
     public double getHitPower() {
         return fuerzaRemate;
     }
 
-    /**Retorna el coordenada destino del remate*/
-    /**Returns the destiny coordinate*/
+    /**
+     * Retorna el coordenada destino del remate
+     */
+    /**
+     * Returns the destiny coordinate
+     */
     public Position getDestiny() {
         return destinoBola;
     }
 
-    /**Retorna el angle vertical*/
-    /**Returns the vertical angle*/
+    /**
+     * Retorna el angle vertical
+     */
+    /**
+     * Returns the vertical angle
+     */
     public double getVerticalAngle() {
         return anguloVertical;
     }
 
-    /**Indica si el comando esta en modalidad avanzar con el balon*/
-    /**Is true when the player forward with the ball*/
+    /**
+     * Indica si el comando esta en modalidad avanzar con el balon
+     */
+    /**
+     * Is true when the player forward with the ball
+     */
     public boolean isForwardBall() {
         return avanza;
     }
 
-    /**Corresponde a el comando avanzar con el balon, se indica el indice del juagador que avanzara con el balon*/
-    /**Instance a CommandHitBall Object to set the player forward with the ball*/
+    /**
+     * Corresponde a el comando avanzar con el balon, se indica el indice del
+     * juagador que avanzara con el balon
+     */
+    /**
+     * Instance a CommandHitBall Object to set the player forward with the ball
+     */
     public CommandHitBall(int playerIdx) {
         this.indJugador = playerIdx;
         this.avanza = true;
     }
 
-    /**Instancia el comando golpear balon, indicando: el indice del jugador que rematara,
-     * las coordenadas de destino, la fuerza del remate (entre 0 y 1) y si es por alto, el remate por alto
-    es con angle Constants.ANGULO_VERTICAL */
-    /**Instance a CommandHitBall Object to set the player index, the destiny coordenate, the power (0-1)
-     * and if is high kick (High kick have a vertical angle=Constants.ANGULO_VERTICAL)*/
+    /**
+     * Instancia el comando golpear balon, indicando: el indice del jugador que
+     * rematara, las coordenadas de destino, la fuerza del remate (entre 0 y 1)
+     * y si es por alto, el remate por alto es con angle
+     * Constants.ANGULO_VERTICAL
+     */
+    /**
+     * Instance a CommandHitBall Object to set the player index, the destiny
+     * coordenate, the power (0-1) and if is high kick (High kick have a
+     * vertical angle=Constants.ANGULO_VERTICAL)
+     */
     public CommandHitBall(int playerIdx, Position destiny, double power, boolean highKick) {
         this.indJugador = playerIdx;
         this.destinoBola = new Position(destiny);
@@ -95,11 +150,17 @@ public final class CommandHitBall extends Command {
         this.angulo = false;
     }
 
-    /**Instancia el comando golpear balon, indicando: el indice del jugador que rematara,
-     * las coordenadas de destino, la fuerza del remate (entre 0 y 1) y el angle vertical, el angle vertical debe estar entre
-    0 y Constants.ANGULO_VERTICAL_MAX */
-    /**Instance a CommandHitBall Object to set the player index, the destiny coordenate, the power (0-1)
-     * and the vertical angle (0-Constants.ANGULO_VERTICAL_MAX)*/
+    /**
+     * Instancia el comando golpear balon, indicando: el indice del jugador que
+     * rematara, las coordenadas de destino, la fuerza del remate (entre 0 y 1)
+     * y el angle vertical, el angle vertical debe estar entre 0 y
+     * Constants.ANGULO_VERTICAL_MAX
+     */
+    /**
+     * Instance a CommandHitBall Object to set the player index, the destiny
+     * coordenate, the power (0-1) and the vertical angle
+     * (0-Constants.ANGULO_VERTICAL_MAX)
+     */
     public CommandHitBall(int playerIdx, Position destiny, double power, double verticalAngle) {
         this.indJugador = playerIdx;
         this.destinoBola = new Position(destiny);
@@ -121,11 +182,16 @@ public final class CommandHitBall extends Command {
         this.angulo = false;
     }
 
-    /**Instancia el comando golpear balon, indicando: el indice del jugador que rematara,
-     * el angle de destino, la fuerza del remate (entre 0 y 1) y si es por alto, el remate por alto
-    es con angle Constants.ANGULO_VERTICAL */
-    /**Instance a CommandHitBall Object to set the player index, the destiny angle, the power (0-1)
-     * and if is high kick (High kick have a vertical angle=Constants.ANGULO_VERTICAL)*/
+    /**
+     * Instancia el comando golpear balon, indicando: el indice del jugador que
+     * rematara, el angle de destino, la fuerza del remate (entre 0 y 1) y si es
+     * por alto, el remate por alto es con angle Constants.ANGULO_VERTICAL
+     */
+    /**
+     * Instance a CommandHitBall Object to set the player index, the destiny
+     * angle, the power (0-1) and if is high kick (High kick have a vertical
+     * angle=Constants.ANGULO_VERTICAL)
+     */
     public CommandHitBall(int playerIdx, double angle, double power, boolean highKick) {
         this.indJugador = playerIdx;
         this.anguloRemate = angle;
@@ -141,11 +207,17 @@ public final class CommandHitBall extends Command {
         this.destino = false;
     }
 
-    /**Instancia el comando golpear balon, indicando: el indice del jugador que rematara,
-     * el angle de destino, la fuerza del remate (entre 0 y 1) y el angle vertical, el angle vertical debe estar entre
-    0 y Constants.ANGULO_VERTICAL_MAX*/
-    /**Instance a CommandHitBall Object to set the player index, the destiny angle, the power (0-1)
-     * and the vertical angle (0-Constants.ANGULO_VERTICAL_MAX)*/
+    /**
+     * Instancia el comando golpear balon, indicando: el indice del jugador que
+     * rematara, el angle de destino, la fuerza del remate (entre 0 y 1) y el
+     * angle vertical, el angle vertical debe estar entre 0 y
+     * Constants.ANGULO_VERTICAL_MAX
+     */
+    /**
+     * Instance a CommandHitBall Object to set the player index, the destiny
+     * angle, the power (0-1) and the vertical angle
+     * (0-Constants.ANGULO_VERTICAL_MAX)
+     */
     public CommandHitBall(int playerIdx, double angle, double power, double highKick) {
         this.indJugador = playerIdx;
         this.indJugador = playerIdx;

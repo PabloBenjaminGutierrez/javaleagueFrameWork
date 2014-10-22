@@ -2,13 +2,21 @@ package org.javahispano.javacup.model.trajectory;
 
 public class AirTrajectory extends AbstractTrajectory {
 
-    /**Aceleracion de la gravedad*/
+    /**
+     * Aceleracion de la gravedad
+     */
     private final static double g = 9.8;
-    /***/
+    /**
+     *
+     */
     private final static double k = 0.7;
-    /***/
+    /**
+     *
+     */
     private final static double n = 1.5;
-    /***/
+    /**
+     *
+     */
     private final static double ay = 2.3;
     final AbstractTrajectory nextTrayectory;
 

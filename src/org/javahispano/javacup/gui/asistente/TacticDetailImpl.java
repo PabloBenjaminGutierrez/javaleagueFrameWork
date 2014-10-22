@@ -20,8 +20,11 @@ import org.slf4j.LoggerFactory;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-/**Esta clase implementa TacticDetail es usada internamente por el Asistente, pero
-tambien puede usarse para cargar dinamicamente desde un archivo guardado en el codigo, una clase TacticDetail */
+/**
+ * Esta clase implementa TacticDetail es usada internamente por el Asistente,
+ * pero tambien puede usarse para cargar dinamicamente desde un archivo guardado
+ * en el codigo, una clase TacticDetail
+ */
 public final class TacticDetailImpl implements TacticDetail {
 
     private static Logger logger = LoggerFactory.getLogger(TacticDetailImpl.class);
@@ -118,7 +121,9 @@ public final class TacticDetailImpl implements TacticDetail {
         return colorCalcetas2;
     }
 
-    /**EStablece el color de las calcetas del uniforme alternativo*/
+    /**
+     * EStablece el color de las calcetas del uniforme alternativo
+     */
     void setColorCalcetas2(Color colorCalcetas2) {
         this.colorCalcetas2 = colorCalcetas2;
     }
@@ -128,7 +133,9 @@ public final class TacticDetailImpl implements TacticDetail {
         return colorCamiseta2;
     }
 
-    /**EStablece el color de la camiseta del uniforme alternativo*/
+    /**
+     * EStablece el color de la camiseta del uniforme alternativo
+     */
     void setColorCamiseta2(Color colorCamiseta2) {
         this.colorCamiseta2 = colorCamiseta2;
     }
@@ -138,7 +145,9 @@ public final class TacticDetailImpl implements TacticDetail {
         return colorFranja2;
     }
 
-    /**EStablece el color de la franja de la camiseta del uniforme alternativo*/
+    /**
+     * EStablece el color de la franja de la camiseta del uniforme alternativo
+     */
     void setColorFranja2(Color colorFranja2) {
         this.colorFranja2 = colorFranja2;
     }
@@ -148,7 +157,9 @@ public final class TacticDetailImpl implements TacticDetail {
         return colorPantalon2;
     }
 
-    /**EStablece el color del pantalon del uniforme alternativo*/
+    /**
+     * EStablece el color del pantalon del uniforme alternativo
+     */
     void setColorPantalon2(Color colorPantalon2) {
         this.colorPantalon2 = colorPantalon2;
     }
@@ -158,7 +169,9 @@ public final class TacticDetailImpl implements TacticDetail {
         return colorPortero2;
     }
 
-    /**EStablece el color del portero del uniforme alternativo*/
+    /**
+     * EStablece el color del portero del uniforme alternativo
+     */
     void setColorPortero2(Color colorPortero2) {
         this.colorPortero2 = colorPortero2;
     }
@@ -168,7 +181,9 @@ public final class TacticDetailImpl implements TacticDetail {
         return estilo2;
     }
 
-    /**EStablece el estilo del uniforme alternativo*/
+    /**
+     * EStablece el estilo del uniforme alternativo
+     */
     void setEstilo2(EstiloUniforme estilo2) {
         this.estilo2 = estilo2;
     }
@@ -183,28 +198,38 @@ public final class TacticDetailImpl implements TacticDetail {
     private ArrayList<Integer> tipoAlineacion = new ArrayList<Integer>();
     private transient Random rand = new Random();
 
-    /**Modifica una alineacion*/
+    /**
+     * Modifica una alineacion
+     */
     protected void setAlineacion(int idx, Position[] alineacion, int tipo) {
         alineaciones.set(idx, alineacion);
         tipoAlineacion.set(idx, tipo);
     }
 
-    /**Retorna una alineacion configurada en el asistente*/
+    /**
+     * Retorna una alineacion configurada en el asistente
+     */
     public Position[] getAlineacion(int idx) {
         return alineaciones.get(idx);
     }
 
-    /**Retorna la cantidad de alienaciones configuradas en el asistente*/
+    /**
+     * Retorna la cantidad de alienaciones configuradas en el asistente
+     */
     public int getAlineacionCount() {
         return alineaciones.size();
     }
 
-    /**Retorna el tipo una alineacion*/
+    /**
+     * Retorna el tipo una alineacion
+     */
     int getTipoAlineacion(int idx) {
         return tipoAlineacion.get(idx);
     }
 
-    /**Inserta un espacio para agregar una alineacion*/
+    /**
+     * Inserta un espacio para agregar una alineacion
+     */
     protected void addAlineacion(int idx) {
         Position[] pnex = new Position[11];
         Position[] pold = alineaciones.get(idx);
@@ -215,16 +240,20 @@ public final class TacticDetailImpl implements TacticDetail {
         alineaciones.add(pnex);
     }
 
-    /**Elimina una alineacion*/
+    /**
+     * Elimina una alineacion
+     */
     protected void delAlineacion(int idx) {
         alineaciones.remove(idx);
         tipoAlineacion.remove(idx);
     }
 
-    /**Carga una tactica detalle a partir de un recurso url
-     * Ej: si el recurso esta en el mismo paquete desde donde se invoca el constructor
-     * podria llamarse de la siguiente forma:
-     * new TacticDetailImpl(this.getClass().getResource('miTacticaDetalle'));
+    /**
+     * Carga una tactica detalle a partir de un recurso url Ej: si el recurso
+     * esta en el mismo paquete desde donde se invoca el constructor podria
+     * llamarse de la siguiente forma: new
+     * TacticDetailImpl(this.getClass().getResource('miTacticaDetalle'));
+     *
      * @param url
      */
     public TacticDetailImpl(URL url) {
@@ -291,24 +320,32 @@ public final class TacticDetailImpl implements TacticDetail {
     }
     private static XStream xs = new XStream(new DomDriver("utf-8"));
 
-    /**Carga una TacticDetail a partir de un fichero*/
+    /**
+     * Carga una TacticDetail a partir de un fichero
+     */
     protected static TacticDetailImpl loadFichero(File file) throws IOException {
         return (TacticDetailImpl) xs.fromXML(new FileInputStream(file));
     }
 
-    /**Carga una TacticDetail a partir de un recurso url*/
+    /**
+     * Carga una TacticDetail a partir de un recurso url
+     */
     protected static TacticDetailImpl loadRecurso(URL url) throws IOException, ClassNotFoundException {
         return (TacticDetailImpl) xs.fromXML(url.openStream());
     }
 
-    /**Guarda una TacticDetailImpl en un fichero*/
+    /**
+     * Guarda una TacticDetailImpl en un fichero
+     */
     protected static void save(TacticDetailImpl tacticaDetalle, File file) throws FileNotFoundException, IOException {
         FileOutputStream fos = new FileOutputStream(file);
         xs.toXML(tacticaDetalle, fos);
         fos.close();
     }
 
-    /**Crea el uniforme principal al azar*/
+    /**
+     * Crea el uniforme principal al azar
+     */
     protected void uniformePrincipalAlAzar() {
         colorCamiseta = nextRandomColor();
         colorPantalon = nextRandomColor();
@@ -319,7 +356,9 @@ public final class TacticDetailImpl implements TacticDetail {
         estilo = estilos[rand.nextInt(estilos.length)];
     }
 
-    /**Crea el uniforme secundario al azar*/
+    /**
+     * Crea el uniforme secundario al azar
+     */
     protected void uniformeSecundarioAlAzar() {
         colorCamiseta2 = nextRandomColor();
         colorPantalon2 = nextRandomColor();

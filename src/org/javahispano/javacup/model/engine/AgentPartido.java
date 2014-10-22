@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.javahispano.javacup.model.engine;
 
@@ -15,85 +15,87 @@ import org.javahispano.javaleague.javacup.shared.MatchShared;
 
 /**
  * @author adou
- * 
+ *
  */
 public class AgentPartido implements Agent {
 
-	@Override
-	public MatchShared execute(Object l, Object v, long maxTimeIter) throws Exception {
-		Partido partido;
-		MatchShared matchShared = new MatchShared();
+    @Override
+    public MatchShared execute(Object l, Object v, long maxTimeIter) throws Exception {
+        Partido partido;
+        MatchShared matchShared = new MatchShared();
 
-		partido = new Partido((Tactic) l, (Tactic) v, true, maxTimeIter);
-		int iter = 0;
-		for (int i = 0; partido.getEstado() != 7; i++) {
-			partido.iterar();
-			iter = partido.getIteracion();
-			if (i > 10000) {
-				throw new Exception("partido bloqueado");
-			}
-		}
+        partido = new Partido((Tactic) l, (Tactic) v, true, maxTimeIter);
+        int iter = 0;
+        for (int i = 0; partido.getEstado() != 7; i++) {
+            partido.iterar();
+            iter = partido.getIteracion();
+            if (i > 10000) {
+                throw new Exception("partido bloqueado");
+            }
+        }
 
-		matchShared.setMatch(Compressor.compress(
-				Serializer.serialize(partido.getPartidoGuardado()),
-				partido.toString()));
-		matchShared.setMatchBin(partido.getPartidoGuardado().binaryServe());
-		matchShared.setGoalsLocal(partido.getGolesLocal());
-		matchShared.setGoalsVisiting(partido.getGolesVisita());
-		matchShared.setPosessionLocal(partido.getPosesionBalonLocal());
-		matchShared.setTimeLocal(partido.getPartidoGuardado().getLocalTime());
-		matchShared.setTimeVisita(partido.getPartidoGuardado().getVisitaTime());
+        matchShared.setMatch(Compressor.compress(
+                Serializer.serialize(partido.getPartidoGuardado()),
+                partido.toString()));
+        matchShared.setMatchBin(partido.getPartidoGuardado().binaryServe());
+        matchShared.setGoalsLocal(partido.getGolesLocal());
+        matchShared.setGoalsVisiting(partido.getGolesVisita());
+        matchShared.setPosessionLocal(partido.getPosesionBalonLocal());
+        matchShared.setTimeLocal(partido.getPartidoGuardado().getLocalTime());
+        matchShared.setTimeVisita(partido.getPartidoGuardado().getVisitaTime());
 
-		return matchShared;
+        return matchShared;
 
-	}
+    }
 
-	@Override
-	public boolean isTactic(Class<?> t) throws Exception {
+    @Override
+    public boolean isTactic(Class<?> t) throws Exception {
 
-		return Tactic.class.isAssignableFrom(t);
-	}
+        return Tactic.class.isAssignableFrom(t);
+    }
 
-	@Override
-	public String testTactic(Object l, Object v) {
-		Partido partido;
+    @Override
+    public String testTactic(Object l, Object v) {
+        Partido partido;
 
-		try {
-			partido = new Partido((Tactic) l, (Tactic) v, true);
-			int iter = 0;
-			for (int i = 0; partido.getEstado() != 7; i++) {
-				partido.iterar();
-				iter = partido.getIteracion();
-				if (i > 250) {
-					break;
-				}
-			}
-		} catch (Exception e) {
-			return stackTraceToString(e);
-		}
+        try {
+            partido = new Partido((Tactic) l, (Tactic) v, true);
+            int iter = 0;
+            for (int i = 0; partido.getEstado() != 7; i++) {
+                partido.iterar();
+                iter = partido.getIteracion();
+                if (i > 250) {
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            return stackTraceToString(e);
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	public String stackTraceToString(Throwable e) {
-		String retValue = null;
-		StringWriter sw = null;
-		PrintWriter pw = null;
-		try {
-			sw = new StringWriter();
-			pw = new PrintWriter(sw);
-			e.printStackTrace(pw);
-			retValue = sw.toString();
-		} finally {
-			try {
-				if (pw != null)
-					pw.close();
-				if (sw != null)
-					sw.close();
-			} catch (IOException ignore) {
-			}
-		}
-		return retValue;
-	}
+    public String stackTraceToString(Throwable e) {
+        String retValue = null;
+        StringWriter sw = null;
+        PrintWriter pw = null;
+        try {
+            sw = new StringWriter();
+            pw = new PrintWriter(sw);
+            e.printStackTrace(pw);
+            retValue = sw.toString();
+        } finally {
+            try {
+                if (pw != null) {
+                    pw.close();
+                }
+                if (sw != null) {
+                    sw.close();
+                }
+            } catch (IOException ignore) {
+            }
+        }
+        return retValue;
+    }
 
 }

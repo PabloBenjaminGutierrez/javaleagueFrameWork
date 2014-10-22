@@ -30,19 +30,28 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
-Visor Basico, extiende de JFrame
+ * Visor Basico, extiende de JFrame
  */
 public class VisorBasico extends javax.swing.JFrame {
 
-    /**variable estatica para setear los Frames por segundo*/
+    /**
+     * variable estatica para setear los Frames por segundo
+     */
     public static int fps = Constants.FPS;
     private PrincipalFrame principal = null;
     private static Logger logger = LoggerFactory.getLogger(VisorBasico.class);
-    /**variable estatica para setear si se dibujaran los jugadores o las esferas*/
+    /**
+     * variable estatica para setear si se dibujaran los jugadores o las esferas
+     */
     public static boolean dibujaJugadores = true;
-    /**Variable estatica para setear si se usara doble buffer*/
+    /**
+     * Variable estatica para setear si se usara doble buffer
+     */
     public static boolean dobleBuffer = true;
-    /**Variable estatica para setear si se mostraran los numeros de los jugadores*/
+    /**
+     * Variable estatica para setear si se mostraran los numeros de los
+     * jugadores
+     */
     public static boolean numeros = false;
     private Image imgCampo, imgArcoSup, imgArcoInf, imgBalon, balon, balonSombra, sombra;
     private Image imgLocal[] = new Image[7];
@@ -230,7 +239,6 @@ public class VisorBasico extends javax.swing.JFrame {
         gr.drawImage(imgCampo, 0, 0, null);
         int pp[], pb[];
 
-
         pb = transformVisorBasico(p.getPosVisibleBalon());
         gr.drawImage(balonSombra, pb[0] + (int) (altura * 2d), pb[1] + (int) (altura * 2d), null);
         if (altura <= 2.9) {
@@ -376,10 +384,14 @@ public class VisorBasico extends javax.swing.JFrame {
     private int audioIdx = 0;
     private int audioAmbiente = 0;
     private int audioAmbienteIdx = 0;
-    /**Activa o desactiva los sonidos*/
+    /**
+     * Activa o desactiva los sonidos
+     */
     public static boolean sonidos = true;
 
-    /**Instancia un visor basicom indicando el partido y jframe principal(dejar nulo)
+    /**
+     * Instancia un visor basicom indicando el partido y jframe principal(dejar
+     * nulo)
      *
      * @param partido
      * @param principal
@@ -608,9 +620,13 @@ public class VisorBasico extends javax.swing.JFrame {
     private float pinch() {
         return .95f + rand.nextFloat() * .1f;
     }
-    /**Volumen del sonido ambiente*/
+    /**
+     * Volumen del sonido ambiente
+     */
     public static float volumenAmbiente = .5f;
-    /**Volumen de los sonidos dentro de la cancha*/
+    /**
+     * Volumen de los sonidos dentro de la cancha
+     */
     public static float volumenCancha = 1;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;

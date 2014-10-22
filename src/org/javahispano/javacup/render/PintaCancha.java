@@ -7,7 +7,10 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
-/**Esta clase se encarga de dibujar el campo de juego, los arcos y el entorno, uso interno*/
+/**
+ * Esta clase se encarga de dibujar el campo de juego, los arcos y el entorno,
+ * uso interno
+ */
 public final class PintaCancha {
 
     private Image pasto, arcilla, arcoSup, arcoInf, image, estadio, cancha, entorno;

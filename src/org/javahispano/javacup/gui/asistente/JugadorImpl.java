@@ -1,10 +1,11 @@
 package org.javahispano.javacup.gui.asistente;
 
-
 import org.javahispano.javacup.model.PlayerDetail;
 import org.javahispano.javacup.model.util.Color;
 
-/**Esta clase implementa PlayerDetail es usada internamente por el Asistente*/
+/**
+ * Esta clase implementa PlayerDetail es usada internamente por el Asistente
+ */
 class JugadorImpl implements PlayerDetail {
 
     private JugadorImpl() {

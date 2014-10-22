@@ -5,7 +5,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 /**
-Esta clase se encarga de dibujar el balon, uso interno
+ * Esta clase se encarga de dibujar el balon, uso interno
  */
 public final class PintaBalon {
 

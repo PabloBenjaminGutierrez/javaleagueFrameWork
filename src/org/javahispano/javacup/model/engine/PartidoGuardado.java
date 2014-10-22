@@ -1,6 +1,5 @@
 package org.javahispano.javacup.model.engine;
 
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -31,7 +30,6 @@ import org.javahispano.javacup.model.util.Color;
 import org.javahispano.javacup.model.util.Constants;
 import org.javahispano.javacup.model.util.Position;
 
-
 /**
  * Clase usada para cargar y guardar partidos, uso interno
  */
@@ -50,7 +48,8 @@ public final class PartidoGuardado implements PartidoInterface, Serializable {
     private TacticDetail detalleVisita;
 
     /**
-     * Instancia un partido guardado indicando los detalles de el local y la visita
+     * Instancia un partido guardado indicando los detalles de el local y la
+     * visita
      */
     public PartidoGuardado(TacticDetail detalleLocal, TacticDetail detalleVisita) {
         this.detalleLocal = detalleLocal;
@@ -58,7 +57,8 @@ public final class PartidoGuardado implements PartidoInterface, Serializable {
     }
 
     /**
-     * Elimina desde la iteracion inicio hasta la iteracion fin, usado para resumir partidos
+     * Elimina desde la iteracion inicio hasta la iteracion fin, usado para
+     * resumir partidos
      */
     public void delete(int inicio, int fin) {
         for (int i = inicio; i < fin; i++) {
@@ -480,18 +480,18 @@ public final class PartidoGuardado implements PartidoInterface, Serializable {
             iterationStream(fos, partido);
         }
     }
-    
+
     public byte[] binaryServe() throws IOException, Exception {
-    	ByteArrayOutputStream bos = new ByteArrayOutputStream();
-    	try  {
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        try {
             detail2Stream(bos, detalleLocal, detalleVisita);
             shorts2Stream(bos, (short) partido.size());
-            iterationStream(bos, partido);		
-    	} finally {
-    		logger.info("Partido en modo binario");
-    	}
-    	
-    	return bos.toByteArray();
+            iterationStream(bos, partido);
+        } finally {
+            logger.info("Partido en modo binario");
+        }
+
+        return bos.toByteArray();
     }
 
     public static ArrayList<File> getFiles(ArrayList<File> files, File parentDir) {
@@ -516,21 +516,21 @@ public final class PartidoGuardado implements PartidoInterface, Serializable {
         }
     }
 
-	@Override
-	public long[] getLocalTime() {
-		long[] result = new long[Constants.ITERACIONES];
-		for(int i = 0; i < Constants.ITERACIONES; i++) {
-			result[i] = partido.get(i).timeLocal;
-		}
-		return result;
-	}
+    @Override
+    public long[] getLocalTime() {
+        long[] result = new long[Constants.ITERACIONES];
+        for (int i = 0; i < Constants.ITERACIONES; i++) {
+            result[i] = partido.get(i).timeLocal;
+        }
+        return result;
+    }
 
-	@Override
-	public long[] getVisitaTime() {
-		long[] result = new long[Constants.ITERACIONES];
-		for(int i = 0; i < Constants.ITERACIONES; i++) {
-			result[i] = partido.get(i).timeVisita;
-		}
-		return result;
-	}
+    @Override
+    public long[] getVisitaTime() {
+        long[] result = new long[Constants.ITERACIONES];
+        for (int i = 0; i < Constants.ITERACIONES; i++) {
+            result[i] = partido.get(i).timeVisita;
+        }
+        return result;
+    }
 }

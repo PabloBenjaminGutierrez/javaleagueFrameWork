@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -139,8 +138,8 @@ public class Sherlock {
             }
             Collections.sort(lista);
             for (Registro r : lista) {
-                    text.append(r.toString());
-                    text.append("\n");
+                text.append(r.toString());
+                text.append("\n");
             }
         }
     }

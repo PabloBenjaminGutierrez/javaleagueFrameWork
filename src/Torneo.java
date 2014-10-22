@@ -1,4 +1,3 @@
-
 import org.javahispano.javacup.model.TacticDetail;
 import org.javahispano.javacup.model.Tactic;
 import org.javahispano.javacup.model.engine.Partido;
@@ -32,7 +31,8 @@ public class Torneo {
     Partido partido;
 
     /**
-     * Ejecuta un partido de torneo, se indica la instancia (cuartos, semi, clasificatorias, etc), La fecha de ejecucion y las tacticas
+     * Ejecuta un partido de torneo, se indica la instancia (cuartos, semi,
+     * clasificatorias, etc), La fecha de ejecucion y las tacticas
      *
      * @param instancia
      * @param fecha
@@ -76,7 +76,8 @@ public class Torneo {
     }
 
     /**
-     * Indica 0 si gano el local y 1 si gano la visita. Se considera la posecion del balon
+     * Indica 0 si gano el local y 1 si gano la visita. Se considera la posecion
+     * del balon
      */
     public int getGanador() {
         if (partido.getGolesLocal() > partido.getGolesVisita()) {
@@ -101,8 +102,10 @@ public class Torneo {
     private static LinkedList<Class> tacticas = new LinkedList<Class>();
 
     /**
-     * Metodo practico para crear liguillas todos contra todos, se debe indicar 'n' como la cantidad de equipos. Retorna un array donde: el primer indice representa la fecha el segundo representa el
-     * partido de la fecha y el tercer indice 0: equipo local y 1: la visita
+     * Metodo practico para crear liguillas todos contra todos, se debe indicar
+     * 'n' como la cantidad de equipos. Retorna un array donde: el primer indice
+     * representa la fecha el segundo representa el partido de la fecha y el
+     * tercer indice 0: equipo local y 1: la visita
      *
      * Nota: No son partidos de ida y vuelta
      *
@@ -251,7 +254,8 @@ public class Torneo {
     }
 
     /**
-     * Obtiene una lista de clases ubicadas dentro de un paquete que son asignables a una clase especifica
+     * Obtiene una lista de clases ubicadas dentro de un paquete que son
+     * asignables a una clase especifica
      */
     @SuppressWarnings("unchecked")
     private static Class[] getClases(File src, String paquete, Class claseAsignable, boolean recursivo) throws Exception {
@@ -331,73 +335,68 @@ public class Torneo {
             }
         }
     }
-    
-    
-  //tacticas ordenadas segun su resultado en la liguilla previa
-    private static Class[] tactics = new Class[]{
-  /*  	org.javahispano.javacup.tacticas.jvc2013.masia13.Masia.class,//22 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.romedal.RomedalTeam.class,//21 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.twentythree.Team2313.class,//18 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.novena.Novena.class,//18 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.pistachos.Pistachos.class,//17 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.ander.ander.class,//17 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.kpacha.SupuTactic.class,//16 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.espinete.Espinete.class,//15 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.txami.Txami.class,//14 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.toulousains.Toulousains.class,//13 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.JGTeam.JGTactic.class,//12 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.Ciclones.Ciclones.class,//11 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.cucarachaAru.TacticaCucaracha.class,//11 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.felipeMoraTeam.FelipeMoraTeam.class,//9 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.theShadows.TheShadows.class,//8 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.fortega.Frioleros.class,//8 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.jhontona.Jhontona.class,//4 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.valedores.Valedores.class,//4 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.xabe.AdamTeam.class,//4 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.sitiostactic2.SitiosTactic2.class,//3 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.enavas.RealUnion.class,//3 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.elaga.Elaga.class,//3 puntos.
-    	org.javahispano.javacup.tacticas.jvc2013.dymcupcakes.DyMTactic.class//0 puntos.*/
-    };
-    
+
+    //tacticas ordenadas segun su resultado en la liguilla previa
+    private static Class[] tactics = new Class[]{ /*  	org.javahispano.javacup.tacticas.jvc2013.masia13.Masia.class,//22 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.romedal.RomedalTeam.class,//21 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.twentythree.Team2313.class,//18 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.novena.Novena.class,//18 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.pistachos.Pistachos.class,//17 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.ander.ander.class,//17 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.kpacha.SupuTactic.class,//16 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.espinete.Espinete.class,//15 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.txami.Txami.class,//14 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.toulousains.Toulousains.class,//13 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.JGTeam.JGTactic.class,//12 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.Ciclones.Ciclones.class,//11 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.cucarachaAru.TacticaCucaracha.class,//11 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.felipeMoraTeam.FelipeMoraTeam.class,//9 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.theShadows.TheShadows.class,//8 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.fortega.Frioleros.class,//8 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.jhontona.Jhontona.class,//4 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.valedores.Valedores.class,//4 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.xabe.AdamTeam.class,//4 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.sitiostactic2.SitiosTactic2.class,//3 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.enavas.RealUnion.class,//3 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.elaga.Elaga.class,//3 puntos.
+     org.javahispano.javacup.tacticas.jvc2013.dymcupcakes.DyMTactic.class//0 puntos.*/};
 
     //array de grupos de la primera fase
     private static Class[][] gruposPublicados() {
-    	return new Class[][]{
-    				// Grupo A
-    	/*			{org.javahispano.javacup.tacticas.jvc2013.novena.Novena.class,
-    				org.javahispano.javacup.tacticas.jvc2013.dymcupcakes.DyMTactic.class,
-    				org.javahispano.javacup.tacticas.jvc2013.txami.Txami.class,
-    				org.javahispano.javacup.tacticas.jvc2013.espinete.Espinete.class,
-    				org.javahispano.javacup.tacticas.jvc2013.felipeMoraTeam.FelipeMoraTeam.class,
-    				org.javahispano.javacup.tacticas.jvc2013.xabe.AdamTeam.class,
-    				},
-    				// Grupo B
-    				{org.javahispano.javacup.tacticas.jvc2013.ander.ander.class,
-    				org.javahispano.javacup.tacticas.jvc2013.jhontona.Jhontona.class,
-    				org.javahispano.javacup.tacticas.jvc2013.enavas.RealUnion.class,
-    				org.javahispano.javacup.tacticas.jvc2013.Ciclones.Ciclones.class,
-    				org.javahispano.javacup.tacticas.jvc2013.cucarachaAru.TacticaCucaracha.class,
-    				org.javahispano.javacup.tacticas.jvc2013.romedal.RomedalTeam.class,
-    				},
-    				// Grupo C
-    				{org.javahispano.javacup.tacticas.jvc2013.elaga.Elaga.class,
-    				org.javahispano.javacup.tacticas.jvc2013.theShadows.TheShadows.class,
-    				org.javahispano.javacup.tacticas.jvc2013.twentythree.Team2313.class,
-    				org.javahispano.javacup.tacticas.jvc2013.kpacha.SupuTactic.class,
-    				org.javahispano.javacup.tacticas.jvc2013.toulousains.Toulousains.class,
-    				org.javahispano.javacup.tacticas.jvc2013.sitiostactic2.SitiosTactic2.class,
-    				},
-    				// Grupo D
-    				{org.javahispano.javacup.tacticas.jvc2013.JGTeam.JGTactic.class,
-    				org.javahispano.javacup.tacticas.jvc2013.fortega.Frioleros.class,
-    				org.javahispano.javacup.tacticas.jvc2013.pistachos.Pistachos.class,
-    				org.javahispano.javacup.tacticas.jvc2013.valedores.Valedores.class,
-    				org.javahispano.javacup.tacticas.jvc2013.masia13.Masia.class,
+        return new Class[][]{ // Grupo A
+        /*			{org.javahispano.javacup.tacticas.jvc2013.novena.Novena.class,
+         org.javahispano.javacup.tacticas.jvc2013.dymcupcakes.DyMTactic.class,
+         org.javahispano.javacup.tacticas.jvc2013.txami.Txami.class,
+         org.javahispano.javacup.tacticas.jvc2013.espinete.Espinete.class,
+         org.javahispano.javacup.tacticas.jvc2013.felipeMoraTeam.FelipeMoraTeam.class,
+         org.javahispano.javacup.tacticas.jvc2013.xabe.AdamTeam.class,
+         },
+         // Grupo B
+         {org.javahispano.javacup.tacticas.jvc2013.ander.ander.class,
+         org.javahispano.javacup.tacticas.jvc2013.jhontona.Jhontona.class,
+         org.javahispano.javacup.tacticas.jvc2013.enavas.RealUnion.class,
+         org.javahispano.javacup.tacticas.jvc2013.Ciclones.Ciclones.class,
+         org.javahispano.javacup.tacticas.jvc2013.cucarachaAru.TacticaCucaracha.class,
+         org.javahispano.javacup.tacticas.jvc2013.romedal.RomedalTeam.class,
+         },
+         // Grupo C
+         {org.javahispano.javacup.tacticas.jvc2013.elaga.Elaga.class,
+         org.javahispano.javacup.tacticas.jvc2013.theShadows.TheShadows.class,
+         org.javahispano.javacup.tacticas.jvc2013.twentythree.Team2313.class,
+         org.javahispano.javacup.tacticas.jvc2013.kpacha.SupuTactic.class,
+         org.javahispano.javacup.tacticas.jvc2013.toulousains.Toulousains.class,
+         org.javahispano.javacup.tacticas.jvc2013.sitiostactic2.SitiosTactic2.class,
+         },
+         // Grupo D
+         {org.javahispano.javacup.tacticas.jvc2013.JGTeam.JGTactic.class,
+         org.javahispano.javacup.tacticas.jvc2013.fortega.Frioleros.class,
+         org.javahispano.javacup.tacticas.jvc2013.pistachos.Pistachos.class,
+         org.javahispano.javacup.tacticas.jvc2013.valedores.Valedores.class,
+         org.javahispano.javacup.tacticas.jvc2013.masia13.Masia.class,
     				
-    				}, */};
+         }, */};
     }
-    
+
     static Random r = new Random();
 
     //genera grupos parejos segun la clasificacion en la liguilla
@@ -516,35 +515,33 @@ public class Torneo {
             System.out.println(ss);
         }
     }
-    
+
     //array de equipos clasificados en la fase uno
-    static Class[][] clasificados = new Class[][]{
-    		// Grupo A
-/*    		{org.javahispano.javacup.tacticas.jvc2013.novena.Novena.class,
-    		org.javahispano.javacup.tacticas.jvc2013.txami.Txami.class,
-    		org.javahispano.javacup.tacticas.jvc2013.espinete.Espinete.class,
-    		org.javahispano.javacup.tacticas.jvc2013.felipeMoraTeam.FelipeMoraTeam.class,
-    		},
-    		// Grupo B
-    		{org.javahispano.javacup.tacticas.jvc2013.romedal.RomedalTeam.class,
-    			org.javahispano.javacup.tacticas.jvc2013.ander.ander.class,
-    			org.javahispano.javacup.tacticas.jvc2013.Ciclones.Ciclones.class,
-        		org.javahispano.javacup.tacticas.jvc2013.cucarachaAru.TacticaCucaracha.class,
-     		},
-    		// Grupo C
-    		{org.javahispano.javacup.tacticas.jvc2013.toulousains.Toulousains.class,
-    			org.javahispano.javacup.tacticas.jvc2013.twentythree.Team2313.class,
-    			org.javahispano.javacup.tacticas.jvc2013.kpacha.SupuTactic.class,
-    			org.javahispano.javacup.tacticas.jvc2013.theShadows.TheShadows.class,	
-    		},
-    		// Grupo D
-    		{org.javahispano.javacup.tacticas.jvc2013.masia13.Masia.class,
-    			org.javahispano.javacup.tacticas.jvc2013.pistachos.Pistachos.class,
-    			org.javahispano.javacup.tacticas.jvc2013.JGTeam.JGTactic.class,
-    		org.javahispano.javacup.tacticas.jvc2013.fortega.Frioleros.class,
-    		} */
-    	};
-    
+    static Class[][] clasificados = new Class[][]{ // Grupo A
+    /*    		{org.javahispano.javacup.tacticas.jvc2013.novena.Novena.class,
+     org.javahispano.javacup.tacticas.jvc2013.txami.Txami.class,
+     org.javahispano.javacup.tacticas.jvc2013.espinete.Espinete.class,
+     org.javahispano.javacup.tacticas.jvc2013.felipeMoraTeam.FelipeMoraTeam.class,
+     },
+     // Grupo B
+     {org.javahispano.javacup.tacticas.jvc2013.romedal.RomedalTeam.class,
+     org.javahispano.javacup.tacticas.jvc2013.ander.ander.class,
+     org.javahispano.javacup.tacticas.jvc2013.Ciclones.Ciclones.class,
+     org.javahispano.javacup.tacticas.jvc2013.cucarachaAru.TacticaCucaracha.class,
+     },
+     // Grupo C
+     {org.javahispano.javacup.tacticas.jvc2013.toulousains.Toulousains.class,
+     org.javahispano.javacup.tacticas.jvc2013.twentythree.Team2313.class,
+     org.javahispano.javacup.tacticas.jvc2013.kpacha.SupuTactic.class,
+     org.javahispano.javacup.tacticas.jvc2013.theShadows.TheShadows.class,	
+     },
+     // Grupo D
+     {org.javahispano.javacup.tacticas.jvc2013.masia13.Masia.class,
+     org.javahispano.javacup.tacticas.jvc2013.pistachos.Pistachos.class,
+     org.javahispano.javacup.tacticas.jvc2013.JGTeam.JGTactic.class,
+     org.javahispano.javacup.tacticas.jvc2013.fortega.Frioleros.class,
+     } */};
+
     //ejecuta la segunda fase (eliminatorias)... guarda los partidos en path
     static void eliminatorias(String path) {
         File f = new File(path);
@@ -833,12 +830,12 @@ public class Torneo {
 
     public static void main(String[] args) throws Exception {
         /*for (Class t : tactics) {
-            Tactic tl = instance(t);
-            Tactic tv = instance(t);
-            long t0 = System.currentTimeMillis();
-            new Torneo("", 0, tl, tv);
-            System.out.println(t + " " + (System.currentTimeMillis() - t0));
-        }*/
+         Tactic tl = instance(t);
+         Tactic tv = instance(t);
+         long t0 = System.currentTimeMillis();
+         new Torneo("", 0, tl, tv);
+         System.out.println(t + " " + (System.currentTimeMillis() - t0));
+         }*/
         //liguilla();
         //printGrupos(gruposFase1(6, 6, 6, 5));
         //primeraFase("/home/adou/jvc2013/partidos/grupos");

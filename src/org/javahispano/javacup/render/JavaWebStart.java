@@ -41,7 +41,7 @@ public class JavaWebStart {
                 fos = new FileOutputStream(out);
                 xs.toXML(datos, fos);
             } catch (FileNotFoundException e) {
-                logger.error("Error al guardar configuracion",e);
+                logger.error("Error al guardar configuracion", e);
             } finally {
                 if (fos != null) {
                     try {

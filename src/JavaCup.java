@@ -1,4 +1,3 @@
-
 import javax.swing.UIManager;
 import org.javahispano.javacup.gui.principal.PrincipalFrame;
 

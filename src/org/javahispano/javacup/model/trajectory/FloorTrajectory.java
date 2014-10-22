@@ -2,9 +2,13 @@ package org.javahispano.javacup.model.trajectory;
 
 public class FloorTrajectory extends AbstractTrajectory {
 
-    /***/
+    /**
+     *
+     */
     private final static double k = 4;
-    /**Distancia final recorrida por el suelo*/
+    /**
+     * Distancia final recorrida por el suelo
+     */
     private final double xf;
 
     public FloorTrajectory(double vx0, double x0) {
@@ -17,7 +21,7 @@ public class FloorTrajectory extends AbstractTrajectory {
             return xf;
         } else {
             //Aplica esta formula de acuerdo a los parametros iniciales
-            return vx0 * t - k * t * t /2 + x0;
+            return vx0 * t - k * t * t / 2 + x0;
         }
     }
 
