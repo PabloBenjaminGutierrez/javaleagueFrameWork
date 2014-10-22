@@ -159,17 +159,17 @@ public class DetalleTactica implements TacticDetail, Alineaciones {
 
     PlayerDetail[] jugadores = new JugadorImpl[]{//
         //
-        new JugadorImpl("David Ospina", 1, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 1.0d, 1.0d, true),//
-        new JugadorImpl("Juan Camilo Zuñiga", 2, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 0.7d, 0.95d, false),//
-        new JugadorImpl("Cristian Zapata", 3, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 0.4d, 0.0d, false),//
-        new JugadorImpl("Mario Alberto Yepez", 4, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 0.7d, 0.95d, false),//
-        new JugadorImpl("Pablo Armero", 5, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 1.0d, 1.0d, false),//
-        new JugadorImpl("Freddy Guarin", 6, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 0.4d, 0.0d, false),//
-        new JugadorImpl("Juan Guillermo Cuadrado", 7, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 1.0d, 1.0d, false),//
-        new JugadorImpl("Abel Aguilar", 8, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 0.4d, 0.0d, false),//
-        new JugadorImpl("James Rodriguez", 10, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 1d, 1d, false),//
-        new JugadorImpl("Radamel Falcao", 9, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 1d, 1d, false),//
-        new JugadorImpl("Jackson Martinez", 11, new Color(255, 200, 150), new Color(50, 0, 0), 1d, 1d, 1d, false) //
+        new JugadorImpl("David Ospina",            1, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 1.00d, 1.00d, true),//
+        new JugadorImpl("Juan Camilo Zuñiga",      2, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.70d, 0.95d, false),//
+        new JugadorImpl("Cristian Zapata",         3, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.40d, 0.00d, false),//
+        new JugadorImpl("Mario Alberto Yepez",     4, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.70d, 0.95d, false),//
+        new JugadorImpl("Pablo Armero",            5, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 1.00d, 1.00d, false),//
+        new JugadorImpl("Freddy Guarin",           6, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.40d, 0.00d, false),//
+        new JugadorImpl("Juan Guillermo Cuadrado", 7, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 1.00d, 1.00d, false),//
+        new JugadorImpl("Abel Aguilar",            8, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.40d, 0.00d, false),//
+        new JugadorImpl("James Rodriguez",        10, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 1.00d, 1.00d, false),//
+        new JugadorImpl("Radamel Falcao",          9, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 1.00d, 1.00d, false),//
+        new JugadorImpl("Jackson Martinez",       11, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 1.00d, 1.00d, false) //
     };	//
 
     public TacticDetail getDetail() {

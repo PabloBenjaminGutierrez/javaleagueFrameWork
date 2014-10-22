@@ -186,16 +186,16 @@ public class DyMTactic implements Tactic {
         public PlayerDetail[] getPlayers() {
             return new PlayerDetail[]{
                 new JugadorImpl("Christofer", 1, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 1.0d, 1.0d, true),
-                new JugadorImpl("Ruben", 2, new Color(0, 0, 0), new Color(0, 0, 0), 1.0d, 0.53d, 0.78d, false),
-                new JugadorImpl("Gabriel", 3, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
-                new JugadorImpl("Gari", 4, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
-                new JugadorImpl("Miguel", 5, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
-                new JugadorImpl("Hugo", 6, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
-                new JugadorImpl("Mark", 7, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
-                new JugadorImpl("Mauricio", 8, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
-                new JugadorImpl("Humberto", 9, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 1.0d, 1.0d, false),
-                new JugadorImpl("Mago", 10, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.5d, 0.81d, false),
-                new JugadorImpl("Alexis", 11, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 1.0d, 1.0d, false)
+                new JugadorImpl("Ruben",      2, new Color(0, 0, 0),       new Color(0, 0, 0),  1.0d, 0.53d, 0.78d, false),
+                new JugadorImpl("Gabriel",    3, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
+                new JugadorImpl("Gari",       4, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
+                new JugadorImpl("Miguel",     5, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
+                new JugadorImpl("Hugo",       6, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
+                new JugadorImpl("Mark",       7, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
+                new JugadorImpl("Mauricio",   8, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.53d, 0.78d, false),
+                new JugadorImpl("Humberto",   9, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 1.0d, 1.0d, false),
+                new JugadorImpl("Mago",      10, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.5d, 0.81d, false),
+                new JugadorImpl("Alexis",    11, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 1.0d, 1.0d, false)
             };
         }
     }

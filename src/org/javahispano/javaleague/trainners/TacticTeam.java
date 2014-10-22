@@ -1,4 +1,4 @@
-package org.javahispano.javaleague.ID_5886672914874368;
+package org.javahispano.javaleague.trainners;
 
 import org.javahispano.javacup.model.engine.GameSituations;
 import java.util.List;
@@ -112,6 +112,6 @@ public class TacticTeam implements Tactic {
 
     @Override
     public List<Command> execute(GameSituations sp) {
-        return Strategies.getCommands(sp);
+        return null;
     }
 }

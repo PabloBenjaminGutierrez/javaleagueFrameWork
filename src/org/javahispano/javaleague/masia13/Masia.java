@@ -83,17 +83,17 @@ public class Masia extends AbstractTactic implements Tactic {
     @Override
     public PlayerDetail[] getPlayers() {
         return new PlayerDetail[]{
-            new MyPlayerDetail("Valdes", 1, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.85d, 1.0d, true),
-            new MyPlayerDetail("Pique", 3, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.25d, 0.60d, false),
-            new MyPlayerDetail("Puyol", 5, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.25d, 0.60d, false),
-            new MyPlayerDetail("Alba", 4, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.25d, 0.60d, false),
-            new MyPlayerDetail("Montoya", 2, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.25d, 0.60d, false),
-            new MyPlayerDetail("Busquet", 7, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.95d, 0.90d, false),
-            new MyPlayerDetail("Xavi", 6, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.95d, 0.90d, false),
-            new MyPlayerDetail("Iniesta", 8, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.95d, 0.90d, false),
-            new MyPlayerDetail("Pedro", 9, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.85d, 1.0d, false),
-            new MyPlayerDetail("Messi", 10, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 1.0d, 1.0d, false),
-            new MyPlayerDetail("Tello", 11, new Color(255, 200, 150), new Color(50, 0, 0), 1.0d, 0.85d, 1.0d, false)
+            new MyPlayerDetail("Valdes",  1, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.85d, 1.00d,  true),
+            new MyPlayerDetail("Pique",   3, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.25d, 0.60d, false),
+            new MyPlayerDetail("Puyol",   5, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.25d, 0.60d, false),
+            new MyPlayerDetail("Alba",    4, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.25d, 0.60d, false),
+            new MyPlayerDetail("Montoya", 2, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.25d, 0.60d, false),
+            new MyPlayerDetail("Busquet", 7, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.95d, 0.90d, false),
+            new MyPlayerDetail("Xavi",    6, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.95d, 0.90d, false),
+            new MyPlayerDetail("Iniesta", 8, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.95d, 0.90d, false),
+            new MyPlayerDetail("Pedro",   9, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.85d, 1.00d,  false),
+            new MyPlayerDetail("Messi",  10, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 1.00d, 1.00d,  false),
+            new MyPlayerDetail("Tello",  11, new Color(255, 200, 150), new Color(50, 0, 0), 1.00d, 0.85d, 1.00d,  false)
         };
     }
 

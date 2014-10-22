@@ -8,7 +8,7 @@ import org.javahispano.javacup.model.util.Position;
  *
  * @author pablo.gutierrez
  */
-class PlayerDetailImpl implements PlayerDetail {
+class Player implements PlayerDetail {
 
     String nombre;
     int numero;
@@ -19,10 +19,18 @@ class PlayerDetailImpl implements PlayerDetail {
     double presicion;
     boolean portero;
     Position Position;
-    private final TacticDetailImpl tacticDetail;
+    private final TeamDetails teamDetails;
 
-    public PlayerDetailImpl(String nombre, int numero, Color piel, Color pelo, double velocidad, double remate, double presicion, boolean portero, final TacticDetailImpl tacticDetail) {
-        this.tacticDetail = tacticDetail;
+    public Player(String nombre, int numero, double velocidad, double remate, double presicion, boolean portero, final TeamDetails teamDetails) {
+        this(nombre, numero, new Color(255, 200, 150), new Color(50, 0, 0), velocidad, remate, presicion, portero, teamDetails);
+    }
+
+    public Player(String nombre, int numero, double velocidad, double remate, double presicion, final TeamDetails teamDetails) {
+        this(nombre, numero, new Color(255, 200, 150), new Color(50, 0, 0), velocidad, remate, presicion, false, teamDetails);
+    }
+
+    public Player(String nombre, int numero, Color piel, Color pelo, double velocidad, double remate, double presicion, boolean portero, final TeamDetails teamDetails) {
+        this.teamDetails = teamDetails;
         this.nombre = nombre;
         this.numero = numero;
         this.piel = piel;
@@ -33,34 +41,42 @@ class PlayerDetailImpl implements PlayerDetail {
         this.portero = portero;
     }
 
+    @Override
     public String getPlayerName() {
         return nombre;
     }
 
+    @Override
     public Color getSkinColor() {
         return piel;
     }
 
+    @Override
     public Color getHairColor() {
         return pelo;
     }
 
+    @Override
     public int getNumber() {
         return numero;
     }
 
+    @Override
     public boolean isGoalKeeper() {
         return portero;
     }
 
+    @Override
     public double getSpeed() {
         return velocidad;
     }
 
+    @Override
     public double getPower() {
         return remate;
     }
 
+    @Override
     public double getPrecision() {
         return presicion;
     }
