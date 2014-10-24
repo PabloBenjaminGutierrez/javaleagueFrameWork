@@ -1,5 +1,6 @@
 package org.javahispano.javaleague.ID_5886672914874368;
 
+import org.javahispano.javaleague.ID_5886672914874368.util.Player;
 import org.javahispano.javacup.model.PlayerDetail;
 import org.javahispano.javacup.model.TacticDetail;
 import org.javahispano.javacup.model.util.Color;
@@ -9,7 +10,7 @@ import org.javahispano.javacup.render.EstiloUniforme;
  *
  * @author pablo.gutierrez
  */
-class TeamDetails implements TacticDetail {
+public class TeamDetails implements TacticDetail {
 
     private final TacticTeam tacticTeam;
 
@@ -17,9 +18,13 @@ class TeamDetails implements TacticDetail {
         this.tacticTeam = tacticTeam;
     }
 
+    public TacticTeam getTacticTeam() {
+        return tacticTeam;
+    }
+
     @Override
     public String getTacticName() {
-        return "benja";
+        return "Killers";
     }
 
     @Override
